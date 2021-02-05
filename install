@@ -1,0 +1,12 @@
+#!/bin/sh
+
+clear
+
+rm -f ./package-lock.json 2>/dev/null
+rm -f ./yarn.lock 2>/dev/null
+rm -rf ./node_modules 2>/dev/null
+
+clear
+#yarn install
+npm install
+npm audit fix
