@@ -16,7 +16,7 @@ export default function NavHeader() {
         <input type="text" />
         <input type="submit" />
       </div>
-      <Link to="/pages/shoppingCart">Carrinho</Link>
+      <Link to="/pages/shoppingCart">Carrinho de compras</Link>
     </div>
   );
 }
