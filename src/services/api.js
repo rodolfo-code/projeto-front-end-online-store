@@ -5,5 +5,3 @@ export function getCategories() {
     .get('https://api.mercadolibre.com/sites/MLB/categories')
     .then(response => console.log(response.data));
 }
-
-getCategories();
