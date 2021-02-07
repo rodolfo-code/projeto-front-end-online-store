@@ -1,7 +1,7 @@
 import React from 'react';
 import NavHeader from './headerComponents/NavHeader';
-import NavMain from './headerComponents/NavMain';
 import './Header.css';
+import NavMain from './headerComponents/NavMain';
 // import PropTypes from 'prop-types';
 
 function Header() {

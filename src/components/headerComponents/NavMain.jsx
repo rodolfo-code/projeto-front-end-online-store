@@ -1,17 +1,21 @@
-import { getCategories as api } from '../../services/api';
-import React from 'react';
 import React, { useEffect, useState } from 'react';
-import { response } from 'express';
+
+// import { getCategories as api } from '../../services/api';
+// import { getCategories as api } from '../../services/api';
 
 export default function NavMain() {
-
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
-    api.get()
-      .then((response) => console.log(response))
-  })
+    fetch('https://api.mercadolibre.com/sites/MLB/categories')
+      .then(response => response.json())
+      .then(data => setCategories(data.data));
+  }, [categories]);
+
   return (
     <div>
-      <p>Nav Main </p>
+      {categories.map(categorie => (
+        <p key={categorie.id}>{categorie.name}</p>
+      ))}
     </div>
   );
 }
