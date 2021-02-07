@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export function getCategories() {
-  axios
-    .get('https://api.mercadolibre.com/sites/MLB/categories')
-    .then(response => console.log(response.data));
-}
+const getCategories = axios.create({
+  baseURL: 'https://api.mercadolibre.com/sites/MLB/categories',
+})
+
+export default getCategories;
