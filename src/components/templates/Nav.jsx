@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavHeader.css';
 
-export default function NavHeader() {
+import CategoriesList from '../headerComponents/CategoriesList';
+
+import './Nav.css';
+
+export default function Nav(props) {
+  const { handleClick } = props;
   return (
-    <div id="nav-header" className="nav-header">
+    <div className="nav-header">
       <a className="nav-logo" href="/">
         <img
           className="nav-logo"
@@ -17,6 +21,9 @@ export default function NavHeader() {
         <input type="submit" />
       </div>
       <Link to="/pages/shoppingCart">Carrinho de compras</Link>
+      <span>
+        <CategoriesList handleClick={handleClick} />
+      </span>
     </div>
   );
 }
