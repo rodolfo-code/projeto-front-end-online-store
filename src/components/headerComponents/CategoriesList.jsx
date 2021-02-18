@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap';
+// import {
+//   Dropdown,
+//   DropdownToggle,
+//   DropdownMenu,
+//   DropdownItem,
+// } from 'reactstrap';
 
 import { getCategories as api } from '../../services/api';
 
@@ -15,13 +22,33 @@ export default function CategoriesList(props) {
             type="button"
             key={categorie.id}
             onClick={() => handleClick(categorie.id)}
+            className="dropdown-item"
           >
             {categorie.name}
           </button>
+
+          // </input>
         )),
       ),
     );
   }, []);
 
-  return <ul>{categories}</ul>;
+  return (
+    <div className="dropdown">
+      <a
+        className="btn btn-secondary dropdown-toggle"
+        href="/"
+        role="button"
+        id="dropdownMenuLink"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Todos
+      </a>
+      <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <div className="dropdown-box">{categories}</div>
+      </div>
+    </div>
+  );
 }

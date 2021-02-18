@@ -9,6 +9,9 @@ export default function Nav(props) {
   const { handleClick } = props;
   return (
     <div className="nav-header">
+      <span>
+        <CategoriesList handleClick={handleClick} />
+      </span>
       <a className="nav-logo" href="/">
         <img
           className="nav-logo"
@@ -21,9 +24,6 @@ export default function Nav(props) {
         <input type="submit" />
       </div>
       <Link to="/pages/shoppingCart">Carrinho de compras</Link>
-      <span>
-        <CategoriesList handleClick={handleClick} />
-      </span>
     </div>
   );
 }
