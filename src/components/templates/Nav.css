@@ -1,0 +1,5 @@
+.nav-header {
+  border: solid 1px;
+  display: flex;
+  justify-content: space-around;
+}
