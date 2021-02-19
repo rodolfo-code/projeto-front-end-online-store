@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Nav from '../components/templates/Nav';
+import Nav from '../components/headerComponents/Nav';
 
 function ShoppingCart() {
   return (
