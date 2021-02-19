@@ -33,18 +33,23 @@ export default function CategoriesList(props) {
     );
   }, []);
 
+  // const style = {
+  //   outline: 'none',
+  // };
+
   return (
     <div className="dropdown">
       <a
-        className="btn btn-secondary dropdown-toggle"
+        className="btn btn-outline"
         href="/"
         role="button"
         id="dropdownMenuLink"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
+        // style={style}
       >
-        Todos
+        <i className="fa fa-bars" />
       </a>
       <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <div className="dropdown-box">{categories}</div>
