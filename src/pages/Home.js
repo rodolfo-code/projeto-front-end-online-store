@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 import Nav from '../components/templates/Nav';
 import { getById as apiId } from '../services/api';
-// import axios from 'axios';
-// import PropTypes from 'prop-types';
 
 function Home() {
   const [productByid, setProductById] = useState([]);
@@ -28,7 +26,5 @@ function Home() {
     </div>
   );
 }
-
-// Home.propTypes = {};
 
 export default Home;
