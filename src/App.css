@@ -1,4 +1,6 @@
-
+body {
+  background: #e7e7e7;
+}
 .dropdown-menu {
   width: 1200px;
   height: max-content;

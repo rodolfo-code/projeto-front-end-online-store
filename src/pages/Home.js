@@ -5,7 +5,7 @@ import React from 'react';
 // import { getById as apiId } from '../services/api';
 
 function Home(props) {
-  const { component } = props;
+  const { nav } = props;
   // const [productByid, setProductById] = useState([]);
   // const [id, setId] = useState('');
 
@@ -26,7 +26,7 @@ function Home(props) {
   return (
     <div>
       {/* <Nav handleClick={handleClick} /> */}
-      {component}
+      {nav}
       <p>Pagina inicial HOME</p>
     </div>
   );
