@@ -1,43 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap';
-// import {
-//   Dropdown,
-//   DropdownToggle,
-//   DropdownMenu,
-//   DropdownItem,
-// } from 'reactstrap';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getCategories as api } from '../../services/api';
+import { getAllCategories } from '../../actions/products.action';
 
 export default function CategoriesList(props) {
   const { handleClick } = props;
-  // eslint-disable-next-line no-unused-vars
   const [categories, setCategories] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    api.get().then(response =>
-      setCategories(
-        response.data.map(categorie => (
-          <Link
-            to="/pages/searchResult"
-            type="button"
-            key={categorie.id}
-            onClick={() => handleClick(categorie.id)}
-            className="dropdown-item"
-          >
-            {categorie.name}
-          </Link>
-
-          // </input>
-        )),
-      ),
-    );
+    dispatch(getAllCategories());
   }, []);
 
-  // const style = {
-  //   outline: 'none',
-  // };
+  useEffect(() => {
+    setCategories(
+      ['a', 'b', 'c', 'd'].map(categorie => (
+        <Link
+          to="/pages/searchResult"
+          type="button"
+          key={categorie.id}
+          onClick={() => handleClick(categorie.id)}
+          className="dropdown-item"
+        >
+          {categorie}
+        </Link>
+      )),
+    );
+  }, []);
 
   return (
     <div className="dropdown">
@@ -49,7 +40,6 @@ export default function CategoriesList(props) {
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
-        // style={style}
       >
         <i className="fa fa-bars" />
       </a>

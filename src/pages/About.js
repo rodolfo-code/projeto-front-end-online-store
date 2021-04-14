@@ -2,13 +2,13 @@ import React from 'react';
 
 import Nav from '../components/headerComponents/Nav';
 
-function ProductDeatails() {
+function About() {
   return (
     <div>
       <Nav />
-      Pagina de detalhes de produto
+      About
     </div>
   );
 }
 
-export default ProductDeatails;
+export default About;
